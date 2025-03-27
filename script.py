@@ -19,9 +19,8 @@ for i in range(last_index, len(my_list)):
         
         # Save progress before exiting
         with open(progress_file, "w") as f:
-            f.write(str(i + 1))  # Save next index
-
-        sys.exit(100)  # Exit with status 100 for approval
+            f.write(str(i + 1))  
+        sys.exit(100)  
     else:
         print(f"'a' not found, found: {my_list[i]}")  
 
