@@ -14,8 +14,6 @@ else:
 
 # Run the loop starting from last processed index
 for i in range(last_index, len(my_list)):
-    print(f"Processing element {i + 1}: {my_list[i]}")
-
     if my_list[i] == 'a':
         print("Approval needed for 'a' in Jenkins.")
         
@@ -23,7 +21,10 @@ for i in range(last_index, len(my_list)):
         with open(progress_file, "w") as f:
             f.write(str(i + 1))  # Save next index
 
-        sys.exit(100)  
+        sys.exit(100)  # Exit with status 100 for approval
+    else:
+        print(f"'a' not found, found: {my_list[i]}")  
+
 # If completed, remove progress file
 if os.path.exists(progress_file):
     os.remove(progress_file)
