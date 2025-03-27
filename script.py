@@ -23,8 +23,7 @@ for i in range(last_index, len(my_list)):
         with open(progress_file, "w") as f:
             f.write(str(i + 1))  # Save next index
 
-        sys.exit(100)  # Exit with status 100 for approval
-
+        sys.exit(100)  
 # If completed, remove progress file
 if os.path.exists(progress_file):
     os.remove(progress_file)
